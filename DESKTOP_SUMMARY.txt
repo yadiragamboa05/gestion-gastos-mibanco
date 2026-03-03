@@ -1,0 +1,232 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                  GESTION DE GASTOS MIBANCO - PROYECTO                      ║
+║              Aplicación de Consola en Java 11 + Maven v3.6+                ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│  📊 ESTADÍSTICAS DEL PROYECTO                                              │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │                                  │                                           │
+│  🛠️ Construcción                                                          │
+│     ├─ Language: Java 11+                                                 │
+│     ├─ Build Tool: Maven 3.6+                                             │
+│     ├─ Testing: JUnit 5.9.2                                               │
+│     └─ JSON: Google Gson 2.10.1                                           │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│  🎯 FUNCIONALIDADES IMPLEMENTADAS                                          │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  ✅ AGREGAR GASTO                                                          │
+│     Permite crear nuevos gastos con titulo, motivo, fecha y monto          │
+│                                                                            │
+│  ✅ LISTAR GASTOS                                                          │
+│     Muestra todos los gastos registrados de forma ordenada                 │
+│                                                                            │
+│  ✅ FILTRAR POR MES                                                        │
+│     Filtra gastos por año y mes específicos                                │
+│                                                                            │
+│  ✅ ACTUALIZAR GASTO                                                       │
+│     Modifica información de gastos existentes                              │
+│                                                                            │
+│  ✅ ELIMINAR GASTO                                                         │
+│     Elimina gastos con confirmación de usuario                             │
+│                                                                            │
+│  ✅ VER ESTADÍSTICAS                                                       │
+│     Muestra total, promedio, máximo y mínimo de gastos                      │
+│                                                                            │
+│  ✅ PERSISTENCIA JSON                                                      │
+│     Guarda y carga gastos automáticamente                                  │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│  📁 ESTRUCTURA DE CARPETAS                                                 │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  gestion-gastos-mibanco/                                                   │
+│  │                                                                         │
+│  ├── 📄 ARCHIVOS DE CONFIGURACIÓN                                          │
+│  │   ├── pom.xml                    (Configuración Maven)                  │
+│  │   ├── .gitignore                                                        │
+│  │   ├── .editorconfig                                                     │
+│  │   └── .github/workflows/maven.yml (GitHub Actions CI/CD)                │
+│  │                                                                         │
+│  ├── 📚 DOCUMENTACIÓN                                                      │
+│  │   ├── README.md                   (Principal documentation)             │
+│  │   ├── PROJECT_SUMMARY.md          (Este resumen)                        │
+│  │   ├── QUICKSTART.md               (Inicio rápido)                       │
+│  │   ├── DEVELOPMENT.md              (Guía de desarrollo)                  │
+│  │   └── INSTALLING_MAVEN.md         (Instalación Maven)                   │
+│  │                                                                         │
+│  ├── 📦 CÓDIGO FUENTE (src/main/java)                                      │
+│  │   └── com/mibanco/gestiongastos/                                        │
+│  │       ├── principal/              (Interfaz y entrada)                  │
+│  │       │   ├── Principal.java                                            │
+│  │       │   └── MenuPrincipal.java                                        │
+│  │       │                                                                 │
+│  │       ├── manager/                (Lógica de negocio)                   │
+│  │       │   └── GastoManager.java                                         │
+│  │       │                                                                 │
+│  │       ├── modelos/                (Modelos de datos)                    │
+│  │       │   └── Gasto.java                                                │
+│  │       │                                                                 │
+│  │       ├── calculos/               (Análisis y cálculos)                 │
+│  │       │   └── GastosCalculos.java                                       │
+│  │       │                                                                 │
+│  │       └── utils/                  (Utilidades)                          │
+│  │           ├── GeneradorDeArchivos.java                                  │
+│  │           └── LocalDateAdapter.java                                     │
+│  │                                                                         │
+│  ├── 🧪 CÓDIGO DE PRUEBAS (src/test/java)                                  │
+│  │   └── com/mibanco/gestiongastos/                                        │
+│  │       ├── manager/GastoManagerTest.java                                 │
+│  │       ├── calculos/GastosCalculosTest.java                              │
+│  │       └── modelos/GastoTest.java                                        │
+│  │                                                                         │
+│  ├── 📊 DATOS DE EJEMPLO                                                   │
+│  │   └── gastos_ejemplo.json         (5 gastos de ejemplo)                 │
+│  │                                                                         │
+│  └── target/                         (Generado por Maven)                  │
+│      └── classes/                    (Clases compiladas)                   │
+│                                                                            │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│  🚀 CÓMO USAR                                                              │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  1. COMPILAR                                                             │
+│      mvn clean compile                                                  │
+│                                                                            │
+│  2. EJECUTAR PRUEBAS                                                     │
+│      mvn test                                                           │
+│                                                                            │
+│  3. EMPAQUETAR                                                           │
+│      mvn clean package                                                  │
+│                                                                            │
+│  4. EJECUTAR APLICACIÓN                                                  │
+│      mvn exec:java "-Dexec.mainClass=com.mibanco.gestiongastos.principal.Principal"              │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│  🏗️ ARQUITECTURA DEL PROYECTO                                             │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│    CAPA DE PRESENTACIÓN                                                  │
+│    ├─ Principal.java (Controlador principal)                            │
+│    └─ MenuPrincipal.java (Interfaz de menús)                            │
+│              │                                                            │
+│              ▼                                                            │
+│    CAPA DE NEGOCIO                                                       │
+│    ├─ GastoManager.java (Gestión de gastos)                             │
+│    └─ GastosCalculos.java (Cálculos y análisis)                         │
+│              │                                                            │
+│              ▼                                                            │
+│    CAPA DE DATOS                                                         │
+│    ├─ Gasto.java (Modelo de datos)                                       │
+│    ├─ GeneradorDeArchivos.java (Persistencia)                           │
+│    └─ LocalDateAdapter.java (Serialización)                             │
+│                                                                            │
+│  Patrón utilizado: Arquitectura en Capas (3-tier architecture)         │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│  ✅ REQUISITOS CUMPLIDOS                                                  │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  Funcionalidades Básicas:                                               │
+│  ✅ Agregar gasto (título, motivo, fecha, monto)                       │
+│  ✅ Actualizar gastos                                                   │
+│  ✅ Eliminar gastos                                                     │
+│  ✅ Listar gastos                                                       │
+│  ✅ Filtrar gastos por mes                                              │
+│                                                                            │
+│  Implementación Técnica:                                                │
+│  ✅ Java 11 puro                                                        │
+│  ✅ Maven 3.6+                                                          │
+│  ✅ Aplicación de consola                                               │
+│  ✅ Almacenamiento en memoria                                           │
+│  ✅ Persistencia en JSON                                                │
+│                                                                            │
+│  Puntos Adicionales (Opcionales):                                       │
+│  ✅ Pruebas unitarias                                                   │
+│  ✅ Almacenamiento persistente (JSON)                                   │
+│  ✅ Interfaz de consola mejorada                                        │
+│  ✅ Documentación                                                         │
+│  ✅ Automatización GitHub Actions                                       │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│  🔧 TECNOLOGÍAS UTILIZADAS                                               │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  Lenguaje:              Java 11+                                         │
+│  Herramienta Build:     Apache Maven 3.6+                               │
+│  Framework Testing:     JUnit 5.9.2                                     │
+│  Serialización:         Google Gson 2.10.1                              │
+│  CI/CD:                 GitHub Actions                                  │
+│  Control de Versiones:  Git                                             │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│  📦 PRUEBAS UNITARIAS INCLUIDAS (27 tests)                               │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  GastoManagerTest (12 tests)                                            │
+│  ├─ testAgregarGasto                                                    │
+│  ├─ testAgregarGastoConMontoNegativo                                    │
+│  ├─ testAgregarGastoConTituloVacio                                      │
+│  ├─ testObtenerGastoPorId                                               │
+│  ├─ testActualizarGasto                                                 │
+│  ├─ testEliminarGasto                                                   │
+│  ├─ testObtenerTodosLosGastos                                           │
+│  ├─ testObtenerTotalGastos                                              │
+│  ├─ testObtenerGastosPorMes                                             │
+│  ├─ testExisteGasto                                                     │
+│  └─ testLimpiarGastos                                                   │
+│                                                                            │
+│  GastosCalculosTest (8 tests)                                           │
+│  ├─ testCalcularTotalGastos                                             │
+│  ├─ testCalcularTotalGastosPorMes                                       │
+│  ├─ testCalcularPromedioGastos                                          │
+│  ├─ testObtenerGastoMasAlto                                             │
+│  ├─ testObtenerGastoMasBajo                                             │
+│  ├─ testFiltrarPorMes                                                   │
+│  ├─ testFiltrarPorRangoDeFechas                                         │
+│  └─ testFiltrarPorMotivo                                                │
+│                                                                            │
+│  GastoTest (7 tests)                                                    │
+│  ├─ testCrearGasto                                                      │
+│  ├─ testModificarGasto                                                  │
+│  ├─ testEqualsGasto                                                     │
+│  ├─ testHashCodeGasto                                                   │
+│  └─ testToStringGasto                                                   │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║  ✨ PROYECTO COMPLETADO EXITOSAMENTE                                       ║
+║  Versión: 1.0.0 | Marzo 2026 | Estado: LISTO                               ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+PRÓXIMOS PASOS:
+  1. Revisa la documentación en README.md
+  2. Instala Maven si aún no lo tienes
+  3. Ejecuta: mvn clean compile
+  4. Ejecuta: mvn test (para verificar las pruebas)
+  5. Ejecuta: mvn exec:java "-Dexec.mainClass=com.mibanco.gestiongastos.principal.Principal"
+
+PARA MÁS INFORMACIÓN:
+  📖 Ver README.md - Documentación Principal
+  🚀 Ver QUICKSTART.md - Inicio Rápido
+  💻 Ver DEVELOPMENT.md - Guía de Desarrollo
+
+═══════════════════════════════════════════════════════════════════════════════

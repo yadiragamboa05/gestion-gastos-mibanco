@@ -1,0 +1,66 @@
+# Git Ignore rules for Java/Maven project
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+.m2/
+.mvn/
+
+# Build outputs
+out/
+build/
+dist/
+*.jar
+*.war
+*.ear
+*.nar
+.flattened-pom.xml
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+log.txt
+
+# Generated files by IDEs
+.classpath
+.projectrunner.properties
+*.properties~
+
+# Local environment variables
+.env
+.env.local
+
+# OS specific
+Thumbs.db
+.AppleDouble
+.LSOverride
+._*
+
+# Test coverage
+coverage/
+.coverage
+htmlcov/
+
+# Miscellaneous
+temp/
+tmp/
+.gradle/
+ocm/
