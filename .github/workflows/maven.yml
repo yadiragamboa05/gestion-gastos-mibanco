@@ -6,6 +6,7 @@ on:
   pull_request:
     branches: [ main, develop ]
 
+# Permisos necesarios para que el robot publique resultados
 permissions:
   contents: read
   checks: write
@@ -16,7 +17,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -26,18 +28,18 @@ jobs:
           cache: maven
 
       - name: Build and Test with Maven
-        # Combinamos para ser más eficientes
+        # Esto ejecuta la compilación y las 26 pruebas que ya tienes listas
         run: mvn clean verify
 
       - name: Upload artifacts
-        # Solo se ejecuta si el build anterior fue exitoso
+        # Actualizado a v4 para corregir el error de la imagen 1
         uses: actions/upload-artifact@v4
         with:
           name: gestion-gastos-jar
           path: target/*.jar
 
       - name: Publish test results
-        if: always() # Importante: queremos ver los resultados aunque algo falle
+        if: always()
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
           files: target/surefire-reports/TEST-*.xml
