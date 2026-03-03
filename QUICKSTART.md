@@ -30,11 +30,35 @@
    ```
 
 5. **Ejecuta la aplicación:**
-   ```bash
    # Opción: Usando Maven
+   ```bash
    mvn exec:java "-Dexec.mainClass=com.mibanco.gestiongastos.principal.Principal"
-
    ```
+    # Opción: Usando JAR
+    ### **1. Requisito de Java**
+    Para ejecutar esta aplicación, es necesario contar con **Java 17 (LTS)** instalado en el sistema.
+    
+    > **Nota Técnica:** El archivo ha sido compilado para la versión de Java 17. Versiones anteriores como Java 8 no son compatibles y generarán un error de `UnsupportedClassVersionError`.
+    
+    ### **2. Comandos de Ejecución**
+    
+    #### **Opción A: Ejecución Estándar**
+    Si tu terminal ya tiene configurado Java 17 por defecto, utiliza el siguiente comando:
+    
+    ```bash
+    java -jar gestion-gastos.jar
+    ```
+    
+    #### **Opción B: Ejecución con Ruta Directa (Recomendado si tienes varias versiones)**
+    Si tu terminal detecta una versión de Java antigua, debes llamar directamente al ejecutable 
+    de Java 17 indicando su ruta completa:
+    
+    ```bash
+    "C:\Users\Usuario\.jdks\ms-17.0.17\bin\java.exe" -jar gestion-gastos.jar
+    ```
+    
+    (Asegúrese de ajustar la ruta C:\Users\Usuario\.jdks\... a la ubicación real de tu JDK 17).
+    
 
 ### Primeros Pasos en la Aplicación
 
