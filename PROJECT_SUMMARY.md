@@ -10,7 +10,7 @@ Se ha implementado exitosamente una **aplicación de gestión de gastos** desarr
 |--------|--------|
 | Funcionalidades Básicas | ✅ Completo |
 | Implementación Técnica | ✅ Completo |
-| Pruebas Unitarias | ✅ Completo (27 tests) |
+| Pruebas Unitarias | ✅ Completo  |
 | Documentación | ✅ Completo |
 | CI/CD (GitHub Actions) | ✅ Configurado |
 
@@ -164,7 +164,7 @@ Los gastos se guardan automáticamente en formato JSON:
 
 ## ✅ Pruebas Unitarias
 
-### GastoManagerTest (12 tests)
+### GastoManagerTest 
 - ✅ testAgregarGasto
 - ✅ testAgregarGastoConMontoNegativo
 - ✅ testAgregarGastoConTituloVacio
@@ -177,7 +177,7 @@ Los gastos se guardan automáticamente en formato JSON:
 - ✅ testExisteGasto
 - ✅ testLimpiarGastos
 
-### GastosCalculosTest (8 tests)
+### GastosCalculosTest 
 - ✅ testCalcularTotalGastos
 - ✅ testCalcularTotalGastosPorMes
 - ✅ testCalcularPromedioGastos
@@ -187,14 +187,12 @@ Los gastos se guardan automáticamente en formato JSON:
 - ✅ testFiltrarPorRangoDeFechas
 - ✅ testFiltrarPorMotivo
 
-### GastoTest (7 tests)
+### GastoTest 
 - ✅ testCrearGasto
 - ✅ testModificarGasto
 - ✅ testEqualsGasto
 - ✅ testHashCodeGasto
 - ✅ testToStringGasto
-
-**Total: 27 pruebas unitarias**
 
 ---
 
